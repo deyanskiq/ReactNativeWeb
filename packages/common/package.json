@@ -1,0 +1,20 @@
+{
+  "name": "@mono-repo/common",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "16.8.3",
+    "react-art": "16.8.2",
+    "react-dom": "^16.8.6",
+    "react-native": "0.59.8",
+    "react-native-web": "^0.11.4",
+    "realm": "^2.28.1"
+  }
+}

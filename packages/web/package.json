@@ -1,0 +1,50 @@
+{
+  "name": "react-native-web-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@mono-repo/common": "1.0.0",
+    "react": "^16.8.6",
+    "react-art": "16.8.2",
+    "react-dom": "^16.8.6",
+    "react-native": "0.59.8",
+    "react-native-web": "^0.11.4",
+    "react-scripts": "^3.0.1"
+  },
+  "scripts": {
+    "start": "SKIP_PREFLIGHT_CHECK=true react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "start-dev": "./node_modules/.bin/webpack-dev-server -d --config webpack.config.js --inline --hot --colors"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-es2015": "^7.0.0-beta.53",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-react-native-web": "^0.11.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react-native": "5.0.2",
+    "html-webpack-plugin": "^3.2.0",
+    "metro-react-native-babel-preset": "^0.54.1",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.1",
+    "webpack-dev-server": "^3.1.4"
+  }
+}
