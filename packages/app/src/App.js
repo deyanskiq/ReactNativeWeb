@@ -1,9 +1,15 @@
 import React, { Component } from 'react'
-import { View, Text } from 'react-native'
+import { View } from 'react-native'
 import { CommonApp } from '@mono-repo/common';
 import { TwoIconButton } from '@mono-repo/common/src/components/TwoIconButton' 
+import realm from '../src/Realm'
 
 class App extends Component {
+
+    componentWillMount() {
+        console.log(realm.objects('User').length)
+    }
+    
     render() {
         return (
             <View flex>
