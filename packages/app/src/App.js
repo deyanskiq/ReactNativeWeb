@@ -56,7 +56,6 @@ class App extends Component {
 
     componentWillMount() {
         // console.log(realm.objects('User').length)
-        console.log(sampleData)
         console.log('normalized data')
         console.log(normalizedData)
     }
