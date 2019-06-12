@@ -10,7 +10,6 @@ const generateKey = (secret) => {
     while (sortedSecretKeyArr.length < 64) {
         sortedSecretKeyArr = sortedSecretKeyArr.concat(secret.split(''));
     }
-    
     const key = new Int8Array(64);
     for (let index = 0; index < key.length; index += 1) {
         key[index] = sortedSecretKeyArr[index].charCodeAt(0);
