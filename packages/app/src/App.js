@@ -3,11 +3,62 @@ import { View } from 'react-native'
 import { CommonApp } from '@mono-repo/common';
 import { TwoIconButton } from '@mono-repo/common/src/components/TwoIconButton' 
 import realm from './Realm'
+import { normalize, schema } from 'normalizr';
+ 
+const wheel = new schema.Entity('wheels');
+ 
+const car = new schema.Entity('cars', {
+  wheels: [wheel]
+});
+ 
+const user = new schema.Entity('users', {
+  cars: [car]
+});
+ 
+const sampleData = {
+    id: "123",
+    name: "Tom",
+    cars: [
+      {
+        id: "324",
+        make: "Tesla",
+        model: "Model S",
+        wheels: [{
+          id: "2",
+          name: "summer"
+        },
+        {
+            id: "3",
+            name: "summer"
+          },
+    ]
+      },
+      {
+        id: "325",
+        make: "Tesla",
+        model: "Roadster",
+        wheels: [{
+          id: "4",
+          name: "winter"
+        },
+        {
+            id: "5",
+            name: "winter"
+          },
+    ]
+      }
+    ]
+}
+
+const normalizedData = normalize(sampleData, user);
 
 class App extends Component {
 
     componentWillMount() {
-        console.log(realm.objects('User').length)
+        // console.log(realm.objects('User').length)
+        console.log(sampleData)
+        console.log('normalized data')
+        console.log(normalizedData)
     }
     
     render() {
