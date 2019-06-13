@@ -2,7 +2,7 @@ import Realm from 'realm'
 import {
     schemas
   } from '@mono-repo/common/src/models/Models';
-import { parseMobileModel } from './utils/modelParser'  
+import { parseModel } from './utils/modelParser'  
 import _ from 'lodash'
 
 const generateKey = (secret) => {
@@ -20,7 +20,7 @@ const generateKey = (secret) => {
 const key = generateKey('TestSecretString');
 
 const generateSchemas = () => {
-   return _.map(schemas, schema => parseMobileModel(schema))  
+   return _.map(schemas, schema => parseModel(schema))  
 }
 
 export default realm = new Realm({

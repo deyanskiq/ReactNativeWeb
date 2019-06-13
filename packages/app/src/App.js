@@ -55,7 +55,7 @@ const normalizedData = normalize(sampleData, user);
 class App extends Component {
 
     componentWillMount() {
-        // console.log(realm.objects('User').length)
+        console.log(realm.objects('User').length)
         console.log('normalized data')
         console.log(normalizedData)
     }

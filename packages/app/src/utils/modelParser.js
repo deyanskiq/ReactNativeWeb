@@ -1,6 +1,4 @@
-import { schema } from 'normalizr';
-
-export const parseMobileModel = (model) => {
+export const parseModel = (model) => {
     for (let [key, value] of Object.entries(model.properties)) {
         if(value.includes('ref')) {
             const data = value.substring(4, value.length - 1).split(',')
@@ -10,17 +8,6 @@ export const parseMobileModel = (model) => {
     return {
         ...model, 
         name: model.schemaName, 
-        schemaVersion: 1, 
+        schemaVersion: 2, 
         primaryKey: 'id'}
 }
-
-export const parseWebModel = (model) => {
-    let attrObject = {}
-    for (let [key, value] of Object.entries(model.properties)) {
-        if(typeof value == 'string' && value.includes('[]')) {
-            attrObject[key] = `[${value.substring(0, value.length - 2).toLocaleLowerCase()}]`
-        }
-    }
-    return new schema.Entity(model.name, attrObject)
-}
- 
